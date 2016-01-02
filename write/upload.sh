@@ -1,5 +1,4 @@
 #!/bin/bash
-NAME=barcelona_spain
 REGION=us-west-1
 
 LATEST=$(cat $NAME/latest)

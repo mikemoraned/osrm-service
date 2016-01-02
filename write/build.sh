@@ -1,7 +1,4 @@
 #!/bin/bash
-export NAME=barcelona_spain
-export URL=https://s3.amazonaws.com/metro-extracts.mapzen.com/barcelona_spain.osm.pbf
-
 echo "Fetching $NAME from $URL"
 mkdir $NAME
 cd $NAME
