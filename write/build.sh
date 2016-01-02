@@ -14,5 +14,5 @@ mkdir $VERSION
 mv area.osrm* $VERSION
 tar -jcvf $VERSION.tar.bz2 $VERSION
 
-echo "$VERSION.tar.bz2" > latest
+echo "$VERSION" > latest
 echo "done"
