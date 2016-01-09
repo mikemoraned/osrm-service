@@ -1,10 +1,16 @@
 #!/bin/bash
-echo "Fetching $NAME from $URL"
-mkdir $NAME
-cd $NAME
+BASE=/data
+DATA_DIR=$BASE/$NAME
+echo "Building into $DATA_DIR"
+
+echo "Fetching $URL"
+
+mkdir -p $DATA_DIR
+cd $DATA_DIR
 curl $URL > area.osm.pbf
 
-echo "Processing $NAME"
+echo "Processing $NAME using $STXXL_SIZE for .stxxl"
+echo "disk=$BASE/stxxl,$STXXL_SIZE,syscall" > .stxxl
 /build/osrm-extract -p /build/profile.lua area.osm.pbf
 /build/osrm-prepare -p /build/profile.lua area.osrm
 
