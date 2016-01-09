@@ -1,8 +1,11 @@
 #!/bin/sh
-echo "Starting server for $NAME"
-LATEST=$(cat $NAME/latest)
+BASE=/data
+DATA_DIR=$BASE/$NAME
 
-OSRM_BASE=$NAME/$LATEST/area.osrm
+echo "Starting server for $NAME"
+LATEST=$(cat $DATA_DIR/latest)
+
+OSRM_BASE=$DATA_DIR/$LATEST/area.osrm
 echo "Using $OSRM_BASE"
 ./osrm-routed $OSRM_BASE --max-table-size 8000 &
 child=$!
